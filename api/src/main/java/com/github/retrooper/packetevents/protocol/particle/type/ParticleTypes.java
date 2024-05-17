@@ -18,15 +18,7 @@
 
 package com.github.retrooper.packetevents.protocol.particle.type;
 
-import com.github.retrooper.packetevents.protocol.particle.data.ParticleBlockStateData;
-import com.github.retrooper.packetevents.protocol.particle.data.ParticleColorData;
-import com.github.retrooper.packetevents.protocol.particle.data.ParticleData;
-import com.github.retrooper.packetevents.protocol.particle.data.ParticleDustColorTransitionData;
-import com.github.retrooper.packetevents.protocol.particle.data.ParticleDustData;
-import com.github.retrooper.packetevents.protocol.particle.data.ParticleItemStackData;
-import com.github.retrooper.packetevents.protocol.particle.data.ParticleSculkChargeData;
-import com.github.retrooper.packetevents.protocol.particle.data.ParticleShriekData;
-import com.github.retrooper.packetevents.protocol.particle.data.ParticleVibrationData;
+import com.github.retrooper.packetevents.protocol.particle.data.*;
 import com.github.retrooper.packetevents.protocol.player.ClientVersion;
 import com.github.retrooper.packetevents.resources.ResourceLocation;
 import com.github.retrooper.packetevents.util.mappings.MappingHelper;
@@ -107,6 +99,7 @@ public class ParticleTypes {
     @Deprecated // Removed in 1.20.5
     public static final ParticleType<ParticleData> AMBIENT_ENTITY_EFFECT = define("ambient_entity_effect");
     public static final ParticleType<ParticleData> ANGRY_VILLAGER = define("angry_villager");
+    public static final ParticleType<ParticleData> BARRIER = define("barrier");
     public static final ParticleType<ParticleBlockStateData> BLOCK = define("block", ParticleBlockStateData::read, ParticleBlockStateData::write);
     public static final ParticleType<ParticleBlockStateData> BLOCK_MARKER = define("block_marker", ParticleBlockStateData::read, ParticleBlockStateData::write);
     public static final ParticleType<ParticleData> BUBBLE = define("bubble");
@@ -231,6 +224,7 @@ public class ParticleTypes {
 
     /**
      * Returns an immutable view of the particle types.
+     *
      * @return Particle Types
      */
     public static Collection<ParticleType<?>> values() {

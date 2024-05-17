@@ -895,10 +895,8 @@ public class PacketWrapper<T extends PacketWrapper<T>> {
                 int index = data & 0x1F;
                 EntityDataType<?> type = EntityDataTypes.getById(serverVersion.toClientVersion(), typeID);
                 Object value = type.getDataDeserializer().apply(this);
-                if (value != null) {
-                    EntityData entityData = new EntityData(index, type, value);
-                    list.add(entityData);
-                }
+                EntityData entityData = new EntityData(index, type, value);
+                list.add(entityData);
             }
         }
         return list;
